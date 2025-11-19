@@ -1,0 +1,552 @@
+/* Reset básico para mejor consistencia */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f0f0f0; /* Fondo del cuerpo para que destaque el header */
+}
+
+/* --- Estilos del Header General --- */
+.header {
+    background-color: #1a2a44; /* Azul oscuro similar al de la imagen */
+    color: white;
+    padding: 10px 40px;
+    
+    /* Configuración de Flexbox para alinear elementos horizontalmente */
+    display: flex;
+    justify-content: space-between; /* Espacio entre el logo, menú y acciones */
+    align-items: center; /* Centrado vertical de los elementos */
+    
+    /* Estilo del contenedor principal */
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Estilos del Logo --- */
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    /* Estilo para que 'CREATIVE' sea un poco más pequeño/ligero si se desea */
+    /* En el HTML se usó bold para enfatizar 'CREATIVE' */
+}
+
+.nav-menu ul {
+    list-style: none; /* Quita los puntos de la lista */
+    display: flex; /* Alinea los ítems de la lista en una fila */
+    gap: 30px; /* Espacio entre los ítems del menú */
+}
+
+
+.nav-menu a {
+    text-decoration: none; /* Quita el subrayado de los enlaces */
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 5px 0;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #a4e4ff; /* Un color más claro al pasar el ratón */
+}
+
+/* --- Estilos de las Acciones (Botón y Icono) --- */
+.cta-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+* Estilo del Botón de Llamada a la Acción */
+.cta-button {
+    background-color: #00bcd4; /* Azul turquesa */
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    
+    /* Efecto degradado/sombra para darle más profundidad */
+    background-image: linear-gradient(to right, #00bcd4, #00d4c8);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s;
+}
+
+.cta-button:hover {
+    opacity: 0.9;
+}
+
+/* Estilo del Icono de Descarga (a la derecha) */
+.download-icon {
+    background-color: rgba(255, 255, 255, 0.3); /* Círculo gris claro/transparente */
+    border: none;
+    border-radius: 50%; /* Lo hace circular */
+    color: white;
+    font-size: 18px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.download-icon:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* --- Estilos de la Sección Principal (Hero y Bloques Destacados) --- */
+.hero-content {
+    display: flex;
+    max-width: 1200px; /* Ajusta el ancho máximo del contenido */
+    margin: 20px auto; /* Centra el contenido */
+    gap: 15px; /* Espacio entre los dos bloques grandes */
+    padding: 0 40px;
+}
+
+.main-block {
+    height: 400px; /* Altura fija para los bloques de imagen */
+    flex: 1; /* Hace que ambos bloques ocupen el mismo ancho */
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden; /* Asegura que el contenido no se salga */
+}
+
+/* Imagen de fondo para el bloque izquierdo (Sublimación) */
+.left-block {
+    /* NOTA: Usa una imagen real aquí. Esto es un placeholder con color. */
+    background-image: url('../img/donramon.txt'); /* Reemplaza con la URL/ruta de tu imagen */
+    background-color: #333; /* Color de fallback */
+}
+
+/* Imagen de fondo para el bloque derecho (Pasacalle) */
+.right-block {
+    /* NOTA: Usa una imagen real aquí. Esto es un placeholder con color. */
+    background-image: url('../img/ploter.jpg'); /* Reemplaza con la URL/ruta de tu imagen */
+    background-color: #555; /* Color de fallback */
+}
+
+/* Estilos del Overlay y Contenido de Texto */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Fondo oscuro transparente */
+    color: white;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Alinea el contenido en la parte inferior */
+}
+
+.overlay h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.overlay p {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* Estilo del Botón Principal */
+.btn-primary {
+    display: inline-block;
+    background-color: #00bcd4;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    align-self: flex-start; /* Asegura que el botón no se estire */
+}
+
+/* --- Estilos de la Sección de Servicios --- */
+.services-section {
+    max-width: 1200px;
+    margin: 60px auto;
+    text-align: center;
+    padding: 0 40px;
+}
+
+.services-section h2 {
+    font-size: 20px;
+    color: #1a2a44;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+.services-grid {
+    display: grid;
+    /* Crea 3 columnas de igual ancho */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
+}
+
+.service-card {
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    transition: box-shadow 0.3s, border-color 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 150px;
+}
+
+.service-card:hover {
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    border-color: #00bcd4; /* Resaltar al pasar el ratón */
+}
+
+.icon-box {
+    color: #00bcd4; /* Color del icono turquesa */
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.service-card small {
+    display: block;
+    font-size: 11px;
+    color: #777;
+    margin-top: 5px;
+}
+
+.gallery-section {
+    /* Fondo azul oscuro para replicar el entorno de la imagen */
+    background-color: #1a2a44; 
+    padding: 60px 0;
+    color: white;
+}
+
+.gallery-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.gallery-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: left; /* Alineado a la izquierda */
+    padding-left: 10px; /* Pequeño margen para la cuadrícula */
+}
+
+.gallery-grid {
+    display: grid;
+    /* Crea 4 columnas de igual ancho para la galería */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px;
+}
+
+.gallery-item {
+    background-color: #333d52; /* Fondo de cada item para el efecto gris/oscuro */
+    border-radius: 5px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    padding: 15px; /* Padding interno para que la imagen se vea más pequeña */
+    transition: transform 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-item:hover {
+    transform: translateY(-3px); /* Pequeño efecto al pasar el ratón */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+}
+
+.gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+    display: block;
+}
+
+/* Estilo para el item destacado (Camiseta, en la imagen tiene un borde turquesa) */
+.gallery-item.featured {
+    border: 3px solid #00bcd4; /* Borde turquesa para destacar */
+}
+
+/* Para mantener la proporción cuadrada de los items de la galería */
+.gallery-item::before {
+    content: "";
+    display: block;
+    padding-top: 100%; /* Truco para mantener una proporción 1:1 (cuadrada) */
+}
+
+.gallery-item img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: calc(100% - 30px); /* 100% menos el padding de 15px a cada lado */
+    height: calc(100% - 30px);
+    transform: translate(-50%, -50%);
+}
+
+/* --- Estilos de la Sección de Contacto --- */
+.contact-section {
+    background-color: #1a2a44; /* Fondo azul oscuro */
+    padding: 60px 0;
+    color: white;
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    gap: 40px;
+}
+
+.contact-form-block {
+    flex: 1; /* Ocupa la mitad del espacio */
+    background-color: white; /* Fondo blanco para el formulario */
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form-block .block-title {
+    color: #1a2a44; /* Título oscuro */
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Estilos del Formulario */
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form textarea,
+.contact-form select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form select {
+    /* Estilo específico para el selector de 'Tipo de Producto' */
+    appearance: none; /* Elimina el estilo nativo de flecha */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23333333%22%20d%3D%22M287%2069.4L146.2%20205.9%205.4%2069.4c-1.5-1.5-3.5-2.3-5.6-2.3-4.4%200-8%203.6-8%208s3.6%208%208%208l140.8%20140.8c1.5%201.5%203.5%202.3%205.6%202.3s4.1-.8%205.6-2.3L297.8%2083.7c1.5-1.5%202.3-3.5%202.3-5.6s-.8-4.1-2.3-5.6z%22%2F%3E%3C%2Fsvg%3E'); /* Flecha personalizada */
+    background-repeat: no-repeat;
+    background-position: right 10px top 50%;
+    background-size: 10px;
+}
+
+/* Botón de envío del formulario */
+.submit-button {
+    width: 100%;
+    background-color: #00bcd4; /* Turquesa */
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.submit-button:hover {
+    background-color: #00a4b7;
+}
+
+/* --- Estilos del Bloque de Información --- */
+.contact-info-block {
+    flex: 1; /* Ocupa la otra mitad del espacio */
+    padding: 30px 0;
+}
+
+/* CTA superior en el bloque de información */
+.cta-box {
+    background-color: #1a2a44; /* Mismo fondo oscuro */
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cta-box p {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.cta-quote-button {
+    display: inline-block;
+    background-color: #ff8c00; /* Naranja/Ámbar destacado */
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: opacity 0.3s;
+}
+
+.cta-quote-button:hover {
+    opacity: 0.9;
+}
+
+.info-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: white;
+}
+
+/* Lista de Contacto */
+.info-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 25px;
+}
+
+.info-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+
+.info-list li i {
+    color: #00bcd4; /* Iconos turquesa */
+    font-size: 18px;
+    width: 30px;
+    text-align: center;
+}
+
+.info-list li span {
+    color: white;
+}
+
+/* Placeholder para el Mapa */
+.map-placeholder {
+    width: 100%;
+    height: 180px; /* Altura para el mapa */
+    background-color: #333d52; /* Color de fondo para simular el mapa */
+    border: 5px solid white; /* Borde blanco alrededor del mapa */
+    border-radius: 5px;
+}
+
+/* --- Estilos del Footer (Pie de Página) --- */
+.main-footer {
+    background-color: #1a2a44; /* Fondo azul oscuro */
+    color: white;
+    padding: 30px 0;
+    font-size: 14px;
+    border-top: 1px solid #333d52; /* Línea de separación sutil */
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    
+    /* Usamos Flexbox para organizar los 4 grupos horizontalmente */
+    display: flex;
+    justify-content: space-between; /* Espacio entre todos los grupos */
+    align-items: center;
+}
+
+/* --- Grupo de Navegación (Enlaces) --- */
+.footer-nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-nav .footer-link {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-nav .footer-link:hover {
+    color: #00bcd4;
+}
+
+/* Enlace "INICIO" destacado (CTA en la imagen) */
+.footer-link-cta {
+    background-color: #00bcd4; /* Fondo turquesa */
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: opacity 0.3s;
+}
+
+.footer-link-cta:hover {
+    opacity: 0.9;
+}
+
+
+/* --- Grupo de Redes Sociales --- */
+.footer-social {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-social a {
+    color: white;
+    font-size: 18px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%; /* Círculo */
+    background-color: #00bcd4; /* Fondo turquesa para los iconos */
+    transition: background-color 0.3s;
+}
+
+.footer-social a:hover {
+    background-color: #00a4b7;
+}
+
+/* --- Grupos Legal y Copyright --- */
+.footer-legal,
+.footer-copyright {
+    text-align: left; /* Alineación del texto */
+    line-height: 1.5;
+    font-size: 13px;
+    color: #b0b0b0; /* Texto ligeramente más claro */
+}
+
+.footer-copyright {
+    /* El copyright a menudo usa un tamaño de fuente aún más pequeño */
+    font-size: 12px;
+}
